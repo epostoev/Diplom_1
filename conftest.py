@@ -4,7 +4,6 @@ from data import BunData, IngredientData
 from praktikum.ingredient_types import INGREDIENT_TYPE_SAUCE, INGREDIENT_TYPE_FILLING
 
 
-
 @pytest.fixture(params=BunData.NAME_PRICE)
 def mock_bun(request):
     name, price = request.param
@@ -12,6 +11,7 @@ def mock_bun(request):
     mock.get_name.return_value = name
     mock.get_price.return_value = price
     return mock
+
 
 @pytest.fixture(params=IngredientData.TYPE_NAME_PRICE)
 def mock_ingredient(request):
@@ -22,6 +22,7 @@ def mock_ingredient(request):
     mock.get_price.return_value = price
     return mock
 
+
 @pytest.fixture
 def mock_sauce():
     mock = Mock()
@@ -29,6 +30,7 @@ def mock_sauce():
     mock.get_name.return_value = "ketchup"
     mock.get_price.return_value = 60
     return mock
+
 
 @pytest.fixture
 def mock_filling():

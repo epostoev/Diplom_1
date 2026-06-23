@@ -1,8 +1,9 @@
-# FILE_1 = $(shell find ./tests -name "*.py" -type f)
+FILE_1 = $(shell find ./tests -name "*.py" -type f)
+# FILE_1 = $(shell find ./ -name "*.py" -type f)
 # FILE_1 = $(shell find ./methods -name "*.py" -type f)
 # FILE_1 = $(shell find ./locators -name "*.py" -type f)
 # FILE_1 = $(shell find ./pages -name "*.py" -type f)
-FILE_1 = data.py
+# FILE_1 = data.py
 # FILE_1 = conftest.py
 
 lint:
@@ -22,4 +23,4 @@ cov:
 	pytest --cov=praktikum
 
 cov-html:
-	pytest --cov=main --cov-branch --cov-report=html
+	pytest --cov=praktikum --cov-branch --cov-report=html
